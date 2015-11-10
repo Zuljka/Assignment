@@ -8,3 +8,6 @@ data does not exist.
 
 I was doing rifle target shooting and results shown in graph are actual results of competitions
 
+TODO:
+modify data in the file so it will be easier to access
+
