@@ -1,0 +1,10 @@
+January		22		386
+February	02		387
+February	28		389
+March		04		389
+April		18 		385
+October		28		390
+October 	29		380 
+November 	26		389
+December	10		382
+December 	11		382
