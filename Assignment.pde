@@ -9,42 +9,39 @@ AudioPlayer shoot; //creating audio file
 
 ArrayList<ArrayList<Float>> result;
 
+Target target; //instance of Target class
+
+
 
 void setup() {
   size(500, 500);
-  background(255,0,0);
+  background(255, 0, 0);
   loadData2005(); //load data and display in window
   loadLine(); //load data and display in console window
-  
+
   minim = new Minim(this);
   shoot = minim.loadFile("blast.mp3");
+
+  target = new Target();
+  //drawing targers
+  target.display();
+  
 }      
+
+
 
 void draw()
 {
-  //drawing targers
-  strokeWeight(2);
-  fill(255);
-  ellipse (xPos, yPos, size, size);
-  ellipse(xPos, yPos, size - 20, size - 20);
-  ellipse(xPos, yPos, size - 40, size - 40); 
-  ellipse(xPos, yPos, size - 60, size - 60);
-  ellipse(xPos, yPos, size - 80, size - 80);
-  point (xPos, yPos);
 
-line(xPos - (size/2) - 3, yPos, xPos+(size/2) +3, yPos);
-line(xPos, yPos -(size/2) -3 , xPos, yPos + (size/2) +3);
-  
-    if(mousePressed)
+
+  if (mousePressed)
   {
-  shoot.rewind(); // to make sure sound will start from the beginnig
-  shoot.play();
-  strokeWeight(4);
-  //fill(0);
-  point(mouseX, mouseY);
+    shoot.rewind(); // to make sure sound will start from the beginnig
+    shoot.play();
+    strokeWeight(4);
+    //fill(0);
+    point(mouseX, mouseY);
   }
-  
-  
 }
 
 void loadData2005()
@@ -82,7 +79,5 @@ void loadLine()
     }
     result.add(v);
   }
-  //println(result); 
 
-  //print out the result by separating elements.
 }
