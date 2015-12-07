@@ -1,4 +1,5 @@
 import ddf.minim.*;
+PImage back;
 
 int xPos = 100;
 int yPos = 400;
@@ -17,7 +18,8 @@ Target target; //instance of Target class
 
 void setup() {
   size(500, 500);
-  background(255, 0, 0);
+  back = loadImage("wallpaper.jpg");
+  background(back);
   loadData2005(); //load data and display in window
   loadData2006();
   loadLine(); //load data and display in console window
@@ -56,7 +58,7 @@ void loadData2005()
   int y = 40;
   String lines[] = loadStrings("2005.txt"); //January  22  386
   println("there are " + lines.length + " lines");
-  text("Shooting results from air rifle ( 10 m distance ) for 2005 ", CENTER, 20);
+  text("Shooting results from air rifle ( 10 m distance ) for 2005 ", 20, 20);
 
   for (int i = 0; i < lines.length; i++) 
   {
@@ -68,10 +70,10 @@ void loadData2005()
 
 void loadData2006()
 {
-  int y = 200;
+  int y = 280;
   String lines[] = loadStrings("2006.txt"); //January  22  386
   println("there are " + lines.length + " lines");
-  text("Shooting results from air rifle ( 10 m distance ) for 2006 ", CENTER, 20);
+  text("Shooting results from air rifle ( 10 m distance ) for 2006 ", 150, 240);
 
   for (int i = 0; i < lines.length; i++) 
   {
