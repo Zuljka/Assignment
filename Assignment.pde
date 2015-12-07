@@ -1,35 +1,56 @@
 import ddf.minim.*;
 
+int xPos = 100;
+int yPos = 300;
+int size = 100;
+
 Minim minim; //audio content
-AudioPlayer explosion;
+AudioPlayer shoot; //creating audio file
 
 ArrayList<ArrayList<Float>> result;
 
 
 void setup() {
-  size(640, 360);
-  background(255);
-  loadData2005(); 
-  loadLine();
+  size(500, 500);
+  background(255,0,0);
+  loadData2005(); //load data and display in window
+  loadLine(); //load data and display in console window
   
   minim = new Minim(this);
-  explosion = minim.loadFile("blast.mp3");
+  shoot = minim.loadFile("blast.mp3");
 }      
 
 void draw()
 {
+  //drawing targers
+  strokeWeight(2);
+  fill(255);
+  ellipse (xPos, yPos, size, size);
+  ellipse(xPos, yPos, size - 20, size - 20);
+  ellipse(xPos, yPos, size - 40, size - 40); 
+  ellipse(xPos, yPos, size - 60, size - 60);
+  ellipse(xPos, yPos, size - 80, size - 80);
+  point (xPos, yPos);
+
+line(xPos - (size/2) - 3, yPos, xPos+(size/2) +3, yPos);
+line(xPos, yPos -(size/2) -3 , xPos, yPos + (size/2) +3);
   
-  if(mousePressed)
+    if(mousePressed)
   {
-  explosion.rewind();
-  explosion.play();
+  shoot.rewind(); // to make sure sound will start from the beginnig
+  shoot.play();
+  strokeWeight(4);
+  //fill(0);
+  point(mouseX, mouseY);
   }
+  
+  
 }
 
 void loadData2005()
 {
   int y = 40;
-  String lines[] = loadStrings("2005.txt");
+  String lines[] = loadStrings("2005.txt"); //January  22  386
   println("there are " + lines.length + " lines");
   text("Shooting results for 2005 ", CENTER, 20);
 

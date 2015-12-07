@@ -1,0 +1,10 @@
+January 	12 		388
+January 	14 		394  << record
+January		20 		390
+February	04 		388
+February 	18 		384
+March		25 		388
+October		28 		380
+November	26 		389
+December	09 		388
+December	09 		388
