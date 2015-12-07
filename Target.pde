@@ -2,7 +2,7 @@ class Target
 {
   //Fields
   int xPos = 100;
-  int yPos = 300;
+  int yPos = 400;
   int size = 100;
   
   void display()
